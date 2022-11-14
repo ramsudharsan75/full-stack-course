@@ -6,10 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "build:ui": "rm -rf build && cd ../notes-backend/ && npm run build && cp -r build ../notes-backend",
-    "deploy": "",
-    "deploy:full": "npm run build:ui && npm run deploy",    
-    "logs:prod": "",
+    "build:ui": "rm -rf build && cd ../notes-frontend/ && npm run build && cp -r build ../notes-backend",
+    "deploy:full": "npm run build:ui && npm start",    
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
