@@ -38,6 +38,7 @@ blogsRouter.post('/', userExtractor, async (request, response) => {
   body.author = user._id
   const blog = new Blog(body)
   const savedBlog = await blog.save()
+  await savedBlog.populate('author')
 
   user.blogs = user.blogs.concat(savedBlog._id)
   await user.save()
